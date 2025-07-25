@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- <meta http-equiv="refresh" content="1"> -->
+  <link rel="stylesheet" href="home.css">
+  <title>Cool Webpage Layout</title>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include("navbar") %>
+       <button><a href="/blogs">get Blogs</a></button>
+
+  <!-- Main content -->
+  <main>
+    <div class="card-container">
+    <% blogs.forEach((blog)=>{ %>
+        <div class="card"> 
+        <img src="<%- blog.image %>" alt="" height="150" width="150">
+        <h2><%- blog.title %></h2>
+        <h4><%- blog.subTitle %></h4>
+        <p><%- blog.description %></p>
+        <a href="/blog/<%-blog.id %>">see more</a>
+      </div>
+      <% }) %>
+      
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <%- include("footer") %>
+
+
+</body>
+</html>
+

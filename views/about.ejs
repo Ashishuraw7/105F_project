@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - CoolSite</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #f0f4f8;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    header {
+      background: #111827;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* About Section */
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .about-box {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-box h1 {
+      font-size: 32px;
+      color: #111827;
+      margin-bottom: 20px;
+    }
+
+    .about-box p {
+      font-size: 16px;
+      color: #4b5563;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+    <%- include("navbar") %>
+
+
+  <!-- About Section -->
+  <main>
+    <div class="about-box">
+      <h1>About Us</h1>
+      <p>Welcome to <strong>CoolSite</strong> — a place where creativity meets technology. We are a small team passionate about crafting web experiences that are modern, user-friendly, and powerful.</p>
+      <p>Founded in 2025, our goal has always been to help individuals and businesses bring their ideas to life on the web through smart design and clean code.</p>
+      <p>Whether you're starting from scratch or improving something existing, we're here to help you every step of the way. Let’s build something amazing together.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <%- include("footer") %>
+
+</body>
+</html>
