@@ -1,6 +1,7 @@
 const express = require("express")
 require("dotenv").config()
 const app = express()
+const cookieParser = require('cookie-parser')
 
 const blogRoute = require('./routes/blogRoute')
 const userRoute = require('./routes/userRoute')
@@ -12,6 +13,7 @@ require("./model/index")
 // telling nodejs to set its view wngine to ejs
 app.set('view engine','ejs')
 
+app.use(cookieParser())
 app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 

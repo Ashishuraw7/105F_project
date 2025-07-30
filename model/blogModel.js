@@ -1,3 +1,5 @@
+const { STRING } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
     const Blog = sequelize.define("blog", {
       title: {
@@ -14,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       image : {
         type : DataTypes.STRING
+      },
+      userId : {
+        type  : DataTypes,STRING
       }
      
     });

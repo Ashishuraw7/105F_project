@@ -41,7 +41,7 @@ exports.loginUser = async(req,res)=>{
         const isMatched = await bcrypt.compare(password,user[0].password)
         if (isMatched){
             // generate token
-            var token = jwt.sign({id : user[0].id}, 'thisisasecretkeydontshare',{
+            var token = jwt.sign({id : user[0].id}, process.env.secretKey,{
                 expiresIn : '1d'
             })
             res.cookie('token',token)

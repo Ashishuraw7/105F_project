@@ -17,7 +17,7 @@ exports.renderAddBlog = (req,res)=>{
 }
 
 exports.renderAddBlogs = async(req,res)=>{
-    console.log(process.env.name)
+    const {userId} = req
 
     const {title,subTitle,description} = req.body
     if(!title || !subTitle || !description){
@@ -30,7 +30,8 @@ exports.renderAddBlogs = async(req,res)=>{
         title : title,
         subTitle : subTitle,
         description : description,
-        image : process.env.backendUrl + req.file.filename
+        image : process.env.backendUrl + req.file.filename,
+        userId : userId
     })
 
     res.redirect("./")
