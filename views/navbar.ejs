@@ -5,6 +5,11 @@
       <a href="./">Home</a>
       <a href="./about">About</a>
       <a href="#">Blog</a>
-      <a href="./register">Register</a>
+      <% if (currentUser){ %>
+        <a href="logout">logout</a>
+     <% }else{ %>
+        <a href="/register">Register</a>
+        <a href="login.ejs">login</a>
+    <% } %>
     </nav>
   </header>

@@ -1,8 +1,13 @@
-const { blogs } = require("../../model")
+const { blogs, users } = require("../../model")
 
 exports.renderHome = async(req,res)=>{
 // blogs table bata data(row) nikalnw paryo ani home page lai pass grnu paryo
-    const blogsTableBlogs = await blogs.findAll()
+    const blogsTableBlogs = await blogs.findAll({
+        include : {
+            model : users
+        }
+    })
+    console.log(blogsTableBlogs)
 
     res.render("home",{blogs : blogsTableBlogs})
 }
@@ -43,10 +48,13 @@ exports.renderSingleBlog = async(req,res)=>{
     const foundData = await blogs.findAll({
         where : {
             id : id
+        },
+        include : {
+            model : users
         }
     })
 
-    console.log(foundData)
+    // console.log(foundData)
     res.render("singleBlog",{blog : foundData})
 }
 

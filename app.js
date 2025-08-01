@@ -16,11 +16,15 @@ app.set('view engine','ejs')
 app.use(cookieParser())
 app.use(express.urlencoded({extended : true}))
 app.use(express.json())
-
-
 app.use(express.static("./uploads/")) 
 // app.use(express.static(__dirname+'/public/'))
 app.use(express.static("./public/styles"))
+
+
+app.use((req,res,next)=>{
+  res.locals.currentUser = req.cookies.token
+    next()
+})
 
 
 

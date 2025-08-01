@@ -45,10 +45,15 @@ exports.loginUser = async(req,res)=>{
                 expiresIn : '1d'
             })
             res.cookie('token',token)
-            res.send("logged in successfully")
+            res.redirect("/")
         }else{
             res.send("email or passwod is invalid") 
         }
     }
 
+}
+
+exports.logOutUser = (req,res)=>{
+    res.clearCookies( 'token')
+    res.redirect("/login")
 }

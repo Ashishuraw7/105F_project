@@ -9,7 +9,7 @@ router.route('/').get(renderHome)
 router.route("/about").get(renderAbout)
 router.route("/addblog").get(renderAddBlog).post(upload.single('image'),isAuthenticated, renderAddBlogs)
 router.route("/blog/:id").get(renderSingleBlog)
-router.route("/delete/:id").get(renderDelete)
+router.route("/delete/:id").get(isAuthenticated, renderDelete)
 router.route("/update/:id").get(renderUpdateBlog).post(renderUpdateBlog)
 
 
